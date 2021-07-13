@@ -1,0 +1,110 @@
+<div class="container">
+    <div class="row">
+
+<div class="col-md-8 offset-md-2">
+
+    <mat-card class="mt-5">
+
+        <div class="container text-center">
+    
+    
+            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input matInput type="text" formControlName="firstname" required name="firstname">
+                        </mat-form-field>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Lastname</mat-label>
+                            <input matInput type="text" required formControlName="lastname" name="lastname">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Mobile No</mat-label>
+                            <input matInput type="text" formControlName="mobile" required name="mobile">
+                        </mat-form-field>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Email </mat-label>
+                            <input matInput type="email" formControlName="email" required name="email">
+                        </mat-form-field>
+                        
+                    </div>
+                </div>
+    
+               
+
+           
+          
+
+              
+    
+                       
+    
+                       
+                   
+                  
+    
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" required formControlName="password" name="password">
+                        </mat-form-field>
+                   
+                            <mat-radio-group  aria-label="Select Gender" formControlName="gender" name="gender" >
+
+                                <mat-radio-button value="male">Male</mat-radio-button><span class="mx-3"></span>
+                                <mat-radio-button value="female">Female</mat-radio-button>
+                              </mat-radio-group>
+               
+                              <mat-form-field appearance="outline">
+                                <mat-label>Date of Birth</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="dob" name="dob">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+
+                              <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Bio</mat-label>
+                                <textarea matInput placeholder="Something About you" formControlName="bio" name="bio"></textarea>
+                              </mat-form-field>
+    
+                <button type="submit" mat-raised-button color="primary" class="btn mt-2  btn-block ">
+                    <span>Sign In</span>
+                </button>
+    
+            </form>
+    
+    
+    
+    
+        </div>
+    <mat-divider>
+    </mat-divider>
+
+    <button routerLink="/login"  class="btn btn-success  btn-block mt-3">
+       Log In
+    </button>
+
+    </mat-card>  
+
+
+</div>
+
+    </div>
+</div>

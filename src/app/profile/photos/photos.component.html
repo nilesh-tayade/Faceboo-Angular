@@ -1,0 +1,23 @@
+<div class="container-fluid mt-3">
+    <mat-card>
+
+        <h1 class="text-center text-primary">Image Gallary</h1>
+
+        <li><a routerLink="/facebook/profile/add-photos" class="btn btn-primary"><i class="fa fa-fw fa-globe"></i> <span>Add More Photos</span></a></li>
+
+
+        <div class="row">
+            <div   *ngFor="let photo of photos">
+                <mat-card class="timeline m-2">
+
+                    <img src="{{photo}}"  mat-card-image style="max-height: 150px; max-width: 200px;">
+
+                </mat-card>
+
+            </div>
+        </div>
+
+
+
+    </mat-card>
+</div>

@@ -1,0 +1,81 @@
+<div class="container-fluid bootstrap snippets bootdeys">
+    <div class="row">
+        <div class="col-lg-3 mt-2">
+            <mat-card>
+            <div class="panel rounded shadow">
+                <div class="panel-body">
+                    <div class="inner-all">
+                        <ul class="list-unstyled">
+                            <li class="text-center">
+                                <img *ngIf="userService.user"  mat-card-image class="img-circle img-thumbnail img-responsive img-bordered-primary"
+                                    src="{{userService.user.profileUrl}}" >
+                            </li>
+                            <li class="text-center">
+                                <h4 class="text-capitalize" *ngIf="userService.user">{{userService.user.firstname}} {{userService.user.lastname}}</h4>
+                            </li>
+                            <li>
+                                <a (click)="changProfile()" class="btn btn-success text-center btn-block">Edit Profile Pcture</a>
+                            </li>
+                            <li><br></li>
+                            <li>
+                                <div class="btn-group-vertical btn-block">
+                                    <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit
+                                        Account</a>
+                                    <a (click)="logout()" class="btn btn-default"><i
+                                            class="fa fa-sign-out pull-right"></i>Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /.panel -->
+
+            <div class="panel panel-theme rounded shadow">
+                <div class="panel-heading">
+                  
+                    <div class="clearfix"></div>
+                </div><!-- /.panel-heading -->
+                <div class="panel-body no-padding rounded">
+                    <ul class="list-group no-margin">
+                        <li class="list-group-item" *ngIf="userService.user"><i class="fa fa-envelope mr-5" ></i>{{userService.user.email}}</li>
+                        <li class="list-group-item" *ngIf="userService.user"><i class="fa fa-globe mr-5"></i>{{userService.user.bio}}</li>
+                        <li class="list-group-item" *ngIf="userService.user"><i class="fa fa-phone mr-5" ></i> {{userService.user.mobile}}</li>
+                        <li class="list-group-item" *ngIf="userService.user"><i class="fa fa-venus-mars mr-5" ></i> {{userService.user.gender}}</li>
+                        <li class="list-group-item" *ngIf="userService.user"><i class="fa fa-calender mr-5" ></i> {{userService.user.dob|date:short}}</li>
+
+                    </ul>
+                </div><!-- /.panel-body -->
+            </div><!-- /.panel -->
+        </mat-card>
+        </div>
+        <div class="col-md-9 mt-2">
+<mat-card>
+            <div class="profile-cover">
+                <div class="cover rounded shadow no-overflow">
+                    <div class="inner-cover">
+                        
+                        <img *ngIf="userService.user"  src="{{userService.user.coverUrl}}"
+                            class="img-responsive full-width" alt="cover" style="max-height:200px;border-radius: 10px;">
+                    </div>
+                    <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu">
+                        <li><a  (click)="open()"><i class="fa fa-fw fa-globe"></i> <span>Change Cover</span></a></li>
+
+                        <li><a routerLink="profile-timeline"><i class="fa fa-fw fa-user"></i> <span>Timeline</span></a></li>
+
+                        <li><a routerLink="about"><i class="fa fa-fw fa-user"></i> <span>About</span></a></li>
+                        <li><a routerLink="photos"><i class="fa fa-fw fa-photo"></i> <span>Photos </span>(<small *ngIf="userService.user.photos!=null" class="text-warning m-2">{{userService.user.photos.length}}</small>)</a>
+                        </li>
+                        <li><a routerLink="friends"><i class="fa fa-fw fa-users"></i><span> Friends </span><small>(23)</small></a>
+                        </li>
+
+                    </ul>
+                </div><!-- /.cover -->
+            </div><!-- /.profile-cover -->
+
+
+        </mat-card>
+        <router-outlet></router-outlet>  
+
+        </div>
+    </div>
+</div>

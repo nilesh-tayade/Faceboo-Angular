@@ -1,0 +1,57 @@
+<div class="container">
+
+    <div class="row">
+<div class="col-md-8 mt-5">
+<img src="../../../assets/facebooklogo.png" width="400px">
+<h1>Facebook helps you connect  and share with the people in your life</h1>
+</div>
+<div class="col-md-4">
+    <mat-card class="mt-5">
+
+        <div class="container text-center">
+    
+    
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    
+                
+    
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Mobile No</mat-label>
+                            <input matInput type="text" formControlName="mobile" required name="mobile">
+                        </mat-form-field>
+    
+                   
+                  
+    
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" required formControlName="password" name="password">
+                        </mat-form-field>
+                   
+    
+               
+    
+    
+                <button type="submit" mat-raised-button color="primary" class="btn  btn-block ">
+                    <span>Log In</span>
+                </button>
+    
+            </form>
+    
+    
+    
+    
+        </div>
+    <mat-divider>
+    </mat-divider>
+
+    <button routerLink="/signup"  class="btn btn-success  btn-block mt-3">
+       Create New Account
+    </button>
+
+    </mat-card>  
+    <p class="mt-2"><b>Create A Page</b> For Celebrity brand or business</p>
+</div>
+</div>
+</div>
